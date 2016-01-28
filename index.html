@@ -254,6 +254,14 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+          <div class="btn-group" id="carouselButtons">
+            <button class="btn btn-danger btn-xs active" id="carousel-play">
+              <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-danger btn-xs" id="carousel-pause">
+              <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
       </div>
     </div><!-- end of carousel -->
@@ -379,5 +387,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- carousel play and pause -->
+    <script>
+      $(document).ready(function() {
+        $('#mycarousel').carousel( { interval:2000 } );
+          $('#carousel-play').click(function() {
+            $('#mycarousel').carousel('cycle');
+          });
+          $('#carousel-pause').click(function(){
+            $('#mycarousel').carousel('pause');
+          });
+      });
+    </script>
 </body>
 </html>

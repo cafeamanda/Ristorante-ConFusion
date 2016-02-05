@@ -64,7 +64,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="loginLink">
               <span class="glyphicon glyphicon-log-in"></span>
               Login
             </a>
@@ -194,10 +194,10 @@
           <p style="padding:20px;"></p>
           <img src="img/logo.png" class="img-responsive">
         </div>
-        <!-- reservation button -->
+        <!-- reserve button -->
         <div class="col-xs-12 col-sm-2">
           <p style="padding:40px;"></p>
-          <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reservationModal">
+          <a type="button" class="btn btn-warning btn-block" id="reserveButton">
             Reserve Table
           </a>
         </div>
@@ -387,6 +387,22 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- reserve button trigger -->
+    <script>
+      $(document).ready(function(){
+        $('#reserveButton').click(function(){
+          $('#reservationModal').modal();
+        });
+      });
+    </script>
+    <!-- login trigger -->
+    <script>
+    $(document).ready(function() {
+      $('#loginLink').click(function(){
+        $('#loginModal').modal();
+      });
+    });
+    </script>
     <!-- carousel play and pause -->
     <script>
       $(document).ready(function() {

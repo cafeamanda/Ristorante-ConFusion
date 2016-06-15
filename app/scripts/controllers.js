@@ -101,11 +101,11 @@ angular.module('confusionApp')
 
   .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory) {
 
-    $scope.promotions = menuFactory.getPromotions();
+    $scope.promotion = menuFactory.getPromotion(0);
 
     $scope.dish = menuFactory.getDish(0);
 
-    $scope.leader = corporateFactory.getLeader(0);
+    $scope.leader = corporateFactory.getLeader(3);
 
 
   }])

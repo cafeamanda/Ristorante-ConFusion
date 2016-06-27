@@ -31,21 +31,22 @@
       <h3 align=center>This Month's Promotions</h3>
     </div>
     <div class="col-xs-12 col-sm-9">
-      <ul class="media-list">
-        <li class="media">
-          <div class="media-body">
-            <h2 class="media-heading">
-              {{promotion.name}}
-              <span class="label label-danger label-xs">{{promotion.label}}</span>
-              <span class="badge">{{promotion.price | currency}}</span>
-            </h2>
-            <p>{{promotion.description}}</p>
-          </div>
-          <div class="media-middle media-right">
-            <img class="media-object img-thumbnail" ng-src={{promotion.image}} alt="">
-          </div>
-        </li>
-      </ul>
+      <div ng-if="!showPromotion">
+        <h3>{{promotionMessage}}</h3>
+      </div>
+      <div class="media" ng-if="showPromotion">
+        <div class="media-body">
+          <h2 class="media-heading">
+            {{promotion.name}}
+            <span class="label label-danger label-xs">{{promotion.label}}</span>
+            <span class="badge">{{promotion.price | currency}}</span>
+          </h2>
+          <p>{{promotion.description}}</p>
+        </div>
+        <div class="media-middle media-right">
+          <img class="media-object img-thumbnail" ng-src={{promotion.image}} alt="">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -55,20 +56,21 @@
       <h3 align=center>Meet our Culinary Specialists</h3>
     </div>
     <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-      <ul class="media-list">
-        <li class="media">
-          <div class="media-left media-middle">
-            <img class="media-object img-thumbnail" ng-src={{leader.image}} alt="">
-          </div>
-          <div class="media-body">
-            <h2 class="media-heading">
-              {{leader.name}}
-              <small>{{leader.designation}}</small>
-            </h2>
-            <p>{{leader.description}}</p>
-          </div>
-        </li>
-      </ul>
+      <div ng-if="!showLeader">
+        <h3>{{leaderMessage}}</h3>
+      </div>
+      <div class="media" ng-if="showLeader">
+        <div class="media-left media-middle">
+          <img class="media-object img-thumbnail" ng-src={{leader.image}} alt="">
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading">
+            {{leader.name}}
+            <small>{{leader.designation}}</small>
+          </h2>
+          <p>{{leader.description}}</p>
+        </div>
+      </div>
     </div>
   </div>
 

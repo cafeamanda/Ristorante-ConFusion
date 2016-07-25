@@ -2,7 +2,7 @@
 
 angular.module('conFusion.services', ['ngResource'])
 
-.constant("baseURL","http://localhost:3000/")
+.constant("baseURL","http://187.67.157.185:3000/")
 
 .factory('menuFactory', ['$resource', 'baseURL', function($resource,baseURL) {
 
